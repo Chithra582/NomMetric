@@ -1,6 +1,13 @@
 # NomMetric
 A Flutter-based mess tracking app designed for college use, enabling students to track meals across multiple messes, developed for OpenCode’25.
 
+<p align="left">
+  <a href="agent.yaml"><img src="https://img.shields.io/badge/OpenGAP-0.1.0-blue.svg" alt="OpenGAP Spec"></a>
+  <a href="https://app.hidevs.xyz/passport/submit"><img src="https://img.shields.io/badge/GitAgent%20Passport-Ready-green.svg" alt="GitAgent Passport Ready"></a>
+  <a href="agent.yaml"><img src="https://img.shields.io/badge/Category-Education-purple.svg" alt="Category Education"></a>
+  <a href="EXPLAINABILITY.md"><img src="https://img.shields.io/badge/Compliance-FERPA%20%7C%20GDPR-orange.svg" alt="Compliance FERPA | GDPR"></a>
+</p>
+
 ## Project Overview
 
 NomMetric is a Flutter-based mess tracking application designed to simplify and digitize meal management in our college hostels.
@@ -143,6 +150,31 @@ NomMetric/
 ├── contributors.md    # Registration file for participants
 └── pubspec.yaml       # Project dependencies and configuration
 ```
+
+---
+
+## 🤖 GitAgent Passport Qualification
+
+This repository is compliant with the **OpenGAP Spec 0.1.0** standard and qualified for the [HiDevs GitAgent Passport](https://app.hidevs.xyz/passport/submit).
+
+### Clearance Checkpoints Summary
+
+| Checkpoint | Status | Focus Area | Artifact |
+| :--- | :--- | :--- | :--- |
+| **Checkpoint 1: Validate** | `PASSED` | Schema, Soul, Skills, Tools | [`agent.yaml`](agent.yaml), [`SOUL.md`](SOUL.md), [`skills/`](skills/), [`tools/`](tools/) |
+| **Checkpoint 2: Explain** | `PASSED` | Decision Logic, Data Usage, Limitations | [`EXPLAINABILITY.md`](EXPLAINABILITY.md) |
+| **Checkpoint 3: Export** | `PASSED` | Interoperability & Tool Schemas | [`tools/`](tools/), [`RULES.md`](RULES.md), [`DUTIES.md`](DUTIES.md) |
+
+### Agent Architecture Overview
+
+- **Identity & Ethics**: [`SOUL.md`](SOUL.md) defines core behavioral traits, dining governance principles, and student fairness commitments.
+- **Operational Rules**: [`RULES.md`](RULES.md) establishes absolute constraints on duplicate check-in prohibition, rebate notice windows, and FERPA/GDPR compliance.
+- **Role Duties**: [`DUTIES.md`](DUTIES.md) defines step-by-step responsibilities across daily meal session orchestration, rebate auditing, menu coordination, and monthly reconciliation.
+- **Transparent Reasoning**: [`EXPLAINABILITY.md`](EXPLAINABILITY.md) documents step-by-step rationale, mathematical rebate formulas, data provenance, and clear operational boundaries.
+- **Modular Skills**: Located in [`skills/`](skills/) for meal attendance tracking, rebate auditing, menu coordination, and dining analytics forecasting.
+- **Tool Schemas**: Standardized JSON schemas located in [`tools/`](tools/) for attendance logging, rebate calculations, menu publication, and dining reporting.
+
+---
 
 ## Contributing
 

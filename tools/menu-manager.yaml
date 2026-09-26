@@ -1,0 +1,59 @@
+name: menu-manager
+description: Publishes, updates, and broadcasts daily/weekly mess menus with allergen tags and instant dish substitutions.
+parameters:
+  type: object
+  properties:
+    mess_id:
+      type: string
+      description: Campus mess facility identifier.
+    menu_date:
+      type: string
+      format: date
+      description: Calendar date of the menu (YYYY-MM-DD).
+    meal_slot:
+      type: string
+      enum:
+        - breakfast
+        - lunch
+        - snacks
+        - dinner
+      description: Dining session for which the menu applies.
+    items:
+      type: array
+      items:
+        type: object
+        properties:
+          dish_name:
+            type: string
+          category:
+            type: string
+            enum:
+              - main_course
+              - side_dish
+              - dessert
+              - beverage
+          dietary_flag:
+            type: string
+            enum:
+              - vegetarian
+              - non_vegetarian
+              - vegan
+              - jain
+          allergens:
+            type: array
+            items:
+              type: string
+        required:
+          - dish_name
+          - category
+          - dietary_flag
+      description: Array of dishes provided in this meal slot.
+    is_substitution:
+      type: boolean
+      default: false
+      description: Indicates if this is an urgent real-time substitution alert.
+  required:
+    - mess_id
+    - menu_date
+    - meal_slot
+    - items

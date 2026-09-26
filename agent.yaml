@@ -1,0 +1,65 @@
+spec_version: "0.1.0"
+name: "nommetric-agent"
+version: "1.0.0"
+description: >
+  Autonomous campus mess tracking, student meal attendance logging, rebate calculation auditing,
+  and multi-mess dining analytics orchestration agent for NomMetric (OpenCode '25). Manages real-time
+  attendance verification, configurable hostel rebate policies, dietary menu scheduling, and food waste reduction.
+author: "Chithra R"
+license: "MIT"
+
+model:
+  preferred: "gemini-2.0-flash"
+  fallback:
+    - "gpt-4o"
+    - "claude-3-5-sonnet"
+  constraints:
+    temperature: 0.2
+    max_tokens: 4096
+
+skills:
+  - meal-attendance-tracker
+  - rebate-calculation-auditor
+  - campus-menu-coordinator
+  - dining-analytics-forecaster
+
+tools:
+  - attendance-logger
+  - rebate-calculator
+  - menu-manager
+  - mess-analytics-engine
+
+runtime:
+  max_turns: 10
+  temperature: 0.2
+  timeout: 120
+
+compliance:
+  risk_tier: standard
+  frameworks:
+    - ferpa
+    - gdpr
+  data_governance:
+    pii_handling: redact
+    data_classification: internal
+  recordkeeping:
+    audit_logging: true
+    log_format: structured_json
+  supervision:
+    human_in_the_loop: conditional
+    override_capability: true
+    kill_switch: true
+
+tags:
+  - flutter
+  - firebase
+  - campus-dining
+  - mess-management
+  - meal-tracking
+  - rebate-calculation
+  - attendance
+  - education
+
+metadata:
+  domain: "campus-dining"
+  category: "Education"

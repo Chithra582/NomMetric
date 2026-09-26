@@ -1,0 +1,34 @@
+name: attendance-logger
+description: Logs student meal attendance, checks operational meal session windows, and enforces multi-mess duplicate check-in prevention.
+parameters:
+  type: object
+  properties:
+    student_id:
+      type: string
+      description: Student university roll number or identification token.
+    mess_id:
+      type: string
+      description: Identifier of the campus mess facility.
+    meal_session:
+      type: string
+      enum:
+        - breakfast
+        - lunch
+        - dinner
+      description: Active dining session.
+    checkin_timestamp:
+      type: string
+      format: date-time
+      description: ISO 8601 formatted timestamp of the check-in event.
+    entry_method:
+      type: string
+      enum:
+        - qr_scan
+        - manual_override
+        - nfc_tap
+      description: Hardware mechanism utilized for verification.
+  required:
+    - student_id
+    - mess_id
+    - meal_session
+    - checkin_timestamp

@@ -1,0 +1,27 @@
+name: mess-analytics-engine
+description: Aggregates meal attendance data, computes dining turnout forecasts, and compiles monthly mess reconciliation dossiers for university administration.
+parameters:
+  type: object
+  properties:
+    mess_id:
+      type: string
+      description: Target mess facility ID (or 'ALL' for campus-wide consolidation).
+    reporting_period:
+      type: string
+      description: Target month or date range (e.g., '2026-09' or '2026-09-01:2026-09-30').
+    metric_focus:
+      type: string
+      enum:
+        - attendance_turnout
+        - rebate_expenditure
+        - food_waste_estimate
+        - full_audit_dossier
+      description: Specific analytical focus for computation.
+    include_anonymized_breakdown:
+      type: boolean
+      default: true
+      description: Include breakdown across hostel blocks without exposing student PII.
+  required:
+    - mess_id
+    - reporting_period
+    - metric_focus

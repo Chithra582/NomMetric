@@ -1,0 +1,29 @@
+name: rebate-calculator
+description: Calculates financial mess rebate deductions based on leave dates, advance notice constraints, and institutional absence minimums.
+parameters:
+  type: object
+  properties:
+    student_id:
+      type: string
+      description: Student university roll number.
+    departure_time:
+      type: string
+      format: date-time
+      description: Departure date and time marking start of mess absence.
+    return_time:
+      type: string
+      format: date-time
+      description: Return date and time marking resumption of mess attendance.
+    base_monthly_fee:
+      type: number
+      description: Monthly baseline mess charges for the student.
+    submission_timestamp:
+      type: string
+      format: date-time
+      description: Timestamp when the student submitted the leave request.
+  required:
+    - student_id
+    - departure_time
+    - return_time
+    - base_monthly_fee
+    - submission_timestamp
